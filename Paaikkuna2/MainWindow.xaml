@@ -1,0 +1,37 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Viikkotehtava4"
+        xmlns:NopeusLaskuri="clr-namespace:Viikkotehtava4;assembly=NopeusLaskuri" 
+        xmlns:NumberTextBox="clr-namespace:Viikkotehtava4;assembly=NumberTextBox" 
+        xmlns:local1="clr-namespace:Viikkotehtava4;assembly=TimeTextBox" 
+        x:Class="Viikkotehtava4.MainWindow"
+        mc:Ignorable="d"
+        Title="Program" Height="Auto" Width="Auto" MaxWidth="190" MinWidth="190" d:DesignWidth="180">    
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.New"
+                        Executed="NewCmdExecuted"
+                        CanExecute="NewCmdCanExecute"/>
+    </Window.CommandBindings>
+    <DockPanel ScrollViewer.VerticalScrollBarVisibility="Visible">
+        <Menu DockPanel.Dock="Top" Height="Auto" Name="menu1" Width="Auto" Margin="0,0,0,0" >
+            <MenuItem Header="File">
+                <MenuItem Command="ApplicationCommands.New"/>
+                <MenuItem Header="Open"/>
+                <MenuItem Header="Save"/>
+                <MenuItem Header="Close" Click="CloseButton_Click" />
+            </MenuItem>
+        </Menu>
+        <StackPanel DockPanel.Dock="Bottom">
+            <Button Content="New" Command="ApplicationCommands.New"></Button>
+            <Button Content="Exit" Click="CloseButton_Click"></Button>
+        </StackPanel>
+        <ScrollViewer>
+        <StackPanel HorizontalAlignment="Left" Height="Auto" VerticalAlignment="Top" Margin="5,5,5,5" 
+                    Name="ExerciseStack" Width="Auto">
+        </StackPanel>
+        </ScrollViewer>
+    </DockPanel>
+</Window>
